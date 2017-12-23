@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="80dp"
+    android:background="#FFF">
+
+    <ImageView
+        android:id="@+id/itemImg"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="12dp"
+        tools:src="#F00" />
+
+    <TextView
+        android:id="@+id/itemTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@id/itemImg"
+        tools:text="书籍详情" />
+
+    <TextView
+        android:id="@+id/itemAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemTitle"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/itemImg"
+        tools:text="作者" />
+
+    <TextView
+        android:id="@+id/itemPubdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/itemAuthor"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="6dp"
+        android:layout_toRightOf="@id/itemImg"
+        tools:text="出版日期" />
+
+    <TextView
+        android:id="@+id/itemPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/itemPubdate"
+        android:layout_marginStart="12dp"
+        android:layout_toRightOf="@id/itemPubdate"
+        tools:text="价格" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_alignParentBottom="true"
+        android:background="#f1f2f3" />
+
+</RelativeLayout>

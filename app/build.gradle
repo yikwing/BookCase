@@ -1,0 +1,64 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'org.greenrobot.greendao'
+
+android {
+    compileSdkVersion 27
+    defaultConfig {
+        applicationId "com.rongyi.bookcase"
+        minSdkVersion 19
+        targetSdkVersion 27
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+greendao {
+    schemaVersion 1
+    daoPackage 'com.rongyi.bookcase.dao'
+    targetGenDir 'src/main/java'
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    implementation 'com.android.support:appcompat-v7:27.0.2'
+    implementation 'com.android.support:recyclerview-v7:27.0.2'
+    implementation 'com.android.support:design:27.0.2'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    //zxing
+    compile 'com.google.zxing:core:3.3.0'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.9@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.9@aar'
+    //reactivex
+    implementation 'io.reactivex.rxjava2:rxjava:2.1.5'
+    implementation 'io.reactivex.rxjava2:rxandroid:2.0.1'
+    //network
+    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.9.0'
+    //photo
+    implementation 'com.github.bumptech.glide:glide:4.4.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.4.0'
+    //rxcache
+    implementation 'com.github.VictorAlbertos.RxCache:runtime:1.8.1-2.x'
+    implementation 'com.github.VictorAlbertos.Jolyglot:gson:0.0.3'
+    //greendao
+    compile 'org.greenrobot:greendao:3.2.2'
+    //rxpermissions
+    compile 'com.tbruyelle.rxpermissions2:rxpermissions:0.9.4@aar'
+    //Button_animal
+    implementation 'com.sackcentury:shinebutton:0.2.0'
+}
