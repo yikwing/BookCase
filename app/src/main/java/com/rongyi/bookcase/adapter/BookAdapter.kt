@@ -16,22 +16,24 @@ import kotlinx.android.synthetic.main.item_dao_book.view.*
  */
 class BookAdapter(private val mData: List<BookDaoBean>, val itemClickListener: (String) -> Unit) :
         RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
+
     override fun getItemCount(): Int {
         return mData.size
     }
 
-    override fun onBindViewHolder(holder: BookViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: BookViewHolder, position: Int) {
         (holder as BookViewHolder).onbind(mData[position], mData[position].isbn13)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): BookViewHolder {
-        val inflate = View.inflate(parent!!.context, R.layout.item_dao_book, null)
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookViewHolder {
+        val inflate = View.inflate(parent.context, R.layout.item_dao_book, null)
         return BookViewHolder(inflate, itemClickListener)
     }
 
 
     class BookViewHolder(itemView: View, private val itemClickListener: (String) -> Unit) :
             RecyclerView.ViewHolder(itemView) {
+
         fun onbind(bookDaoBean: BookDaoBean, isbn13: String) {
             itemView.itemTitle.text = bookDaoBean.bookName
             itemView.itemAuthor.text = bookDaoBean.bookAuthor
